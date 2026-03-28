@@ -37,3 +37,15 @@ DELETE /users/{id}
 ## ▶️ How to Run
 
 1. Clone the repository:
+2. Run the application:
+3. open H2 Console:   http://localhost:8080/h2-console
+
+
+## 📊 Sample JSON
+
+```json
+{
+  "name": "Sankar",
+  "email": "Sankar@gmail.com",
+  "city": "Dallas"
+}
