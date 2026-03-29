@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import UserManagement.um.entity.User;
 import UserManagement.um.service.UserService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/users")
@@ -20,7 +21,7 @@ public class UserController {
     private UserService userService;    
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public User createUser(@Valid @RequestBody User user) {
         return userService.saveUser(user);
     }
     @GetMapping
@@ -32,7 +33,7 @@ public class UserController {
         return userService.getUserById(id);
     }
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+    public User updateUser(@PathVariable Long id, @Valid @RequestBody User user) {
         return userService.updateUser(id, user);
     }
     @DeleteMapping("/{id}")
